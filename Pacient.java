@@ -5,6 +5,7 @@ public class Pacient implements Comparable<Pacient> {
     private String name;
     private String syntom;
     private String priority;
+    private String arrivalTime;
 
     /**
      * Constructor de la clase Pacient.
@@ -12,10 +13,11 @@ public class Pacient implements Comparable<Pacient> {
      * @param syntom sintoma del paciente
      * @param priority prioridad de atencion
      */
-    public Pacient(String name, String syntom, String priority) {
+    public Pacient(String name, String syntom, String priority, String arrivalTime) {
         this.name = name;
         this.syntom = syntom;
         this.priority = priority;
+        this.arrivalTime = arrivalTime;
     }
 
     /**
@@ -33,13 +35,19 @@ public class Pacient implements Comparable<Pacient> {
     public String toString() {
         return "Paciente: " + name + " Con:" + syntom + "[" +  priority + "]";
     }
+    
 
     /**
      * Metodo que compara dos pacientes por su prioridad de atencion.
      * @param pacient paciente ingresado
      * @return comparacion entre prioridades
      */
-    public int compareTo(Pacient pacient) {
-        return this.priority.compareTo(pacient.getPriority());
+    @Override
+    public int compareTo(Pacient other) {
+        int result = this.priority.compareTo(other.getPriority());
+        if(result == 0){
+            return this.arrivalTime.compareTo(other.arrivalTime);
+        }
+        return result;
     }
 }
