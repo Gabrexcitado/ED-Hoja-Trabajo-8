@@ -6,19 +6,20 @@ public class VectorHeap<E extends Comparable<E>> implements IPriorityQueue<E> {
     /**
      * Metodo para agregar y ordenar un paciente nuevo por prioridad
      */
-    public void add(E pacient) {
+    @Override
+    public void add(E data) {
 
         if (vector.isEmpty()) {
             vector.add(null); 
         }
 
-        vector.add(pacient); 
+        vector.add(data); 
         int position = vector.size() - 1;
 
         //Comparar con el padre
-        while (position > 1 && pacient.compareTo(vector.get(position / 2)) < 0) {
+        while (position > 1 && data.compareTo(vector.get(position / 2)) < 0) {
             E parent = vector.get(position / 2);
-            vector.set(position / 2, pacient);
+            vector.set(position / 2, data);
             vector.set(position, parent);
             position = position / 2;
         }
@@ -28,6 +29,7 @@ public class VectorHeap<E extends Comparable<E>> implements IPriorityQueue<E> {
      * Metodo que saca el paciente con mayor prioridad de la cola
      * @return siguiente paciente a tratar
      */
+    @Override
     public E poll() {
         if (vector.isEmpty() || vector.size() == 1) {
             return null; 
@@ -70,5 +72,14 @@ public class VectorHeap<E extends Comparable<E>> implements IPriorityQueue<E> {
         }
 
         return toReturn;
+    }
+
+    /**
+     * Metodo para verificar si la cola de prioridad esta vacia
+     * @return true si la cola de prioridad esta vacia, false en caso contrario
+     */
+    @Override
+    public boolean isEmpty() {
+        return vector.isEmpty();
     }
 }

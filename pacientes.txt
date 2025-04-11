@@ -1,4 +1,4 @@
-Juan Perez, fractura de pierna, C
-Maria Ramirez, apendicitis, A
-Lorenzo Toledo, chikunguya, E
-Carmen Sarmientos, dolores de parto, B
+Juan Perez, fractura de pierna, C, 00:50
+Maria Ramirez, apendicitis, A, 04:40
+Lorenzo Toledo, chikunguya, E, 05:30
+Carmen Sarmientos, dolores de parto, B, 6:00

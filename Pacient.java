@@ -29,6 +29,30 @@ public class Pacient implements Comparable<Pacient> {
     }
 
     /**
+     * Metodo que retorna el nombre del paciente
+     * @return nombre del paciente
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Metodo que retorna el sintoma del paciente
+     * @return sintoma del paciente
+     */
+    public String getSyntom() {
+        return syntom;
+    }
+
+    /**
+     * Metodo que retorna la hora de llegada del paciente
+     * @return hora de llegada del paciente
+     */
+    public String getArrivalTime() {
+        return arrivalTime;
+    }
+
+    /**
      * Metodo que retorna la ficha del paciente
      * @return ficha del paciente
      */
