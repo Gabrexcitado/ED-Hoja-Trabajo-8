@@ -57,7 +57,7 @@ public class Pacient implements Comparable<Pacient> {
      * @return ficha del paciente
      */
     public String toString() {
-        return "Paciente: " + name + " Con:" + syntom + "[" +  priority + "]";
+        return "Paciente: " + name + " con: " + syntom + "   [" +  priority.toUpperCase() + "]";
     }
     
 

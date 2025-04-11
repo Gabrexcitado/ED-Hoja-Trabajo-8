@@ -80,6 +80,6 @@ public class VectorHeap<E extends Comparable<E>> implements IPriorityQueue<E> {
      */
     @Override
     public boolean isEmpty() {
-        return vector.isEmpty();
+    return vector.size() <= 1; 
     }
 }

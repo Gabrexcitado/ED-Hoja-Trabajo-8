@@ -2,6 +2,9 @@ import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
 
+/**
+ * Pruebas unitarias del VectorHeap
+ */
 public class VectorHeapTest {
 
     private VectorHeap<Pacient> heap;
@@ -39,7 +42,7 @@ public class VectorHeapTest {
         assertEquals(pacientFourth, heap.poll());
     }
 
-    // Test de añadir y eliminar elementos en orden
+    // Test de asacar nulo
     @Test
     public void testPollOnEmptyHeap() {
         assertNull(heap.poll());
@@ -58,13 +61,13 @@ public class VectorHeapTest {
         heap.add(pacientFourth);
         heap.add(pacientFirst);
 
-        // Verificamos que el primer elemento extraído sea el de menor prioridad (el más pequeño)
+
         assertEquals(pacientFirst, heap.poll());
         assertEquals(pacientSecond, heap.poll());
 
     }
 
-    // Test de agregar un solo elemento y luego verificar el comportamiento de poll
+    // Test de comportamiento de poll
     @Test
     public void testAddAndPollSingleElement() {
         Pacient pacientFirst = new Pacient("Pacient1", "dolor de panza", "A", "8:30");

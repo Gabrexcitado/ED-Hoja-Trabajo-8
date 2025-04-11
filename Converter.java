@@ -39,16 +39,24 @@ public class Converter {
         return Heap;
     }
 
-    public static void guardarPacientesEnArchivo(IPriorityQueue<Pacient> heap, String file) {
+    /**
+     * Guarda los pacientes en un archivo txt
+     * @param heap Heap de prioridad con los pacientes
+     * @param file archivo txt
+     */
+    public static void savePacients(IPriorityQueue<Pacient> heap, String file) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
             while (!heap.isEmpty()) {
                 Pacient p = heap.poll();
-                bw.write(p.getName() + ", " + p.getSyntom() + ", " + p.getPriority() + ", " + p.getArrivalTime());
-                bw.newLine();
+                if (p != null) { // Validación clave
+                    bw.write(p.getName() + ", " + p.getSyntom() + ", " + p.getPriority() + ", " + p.getArrivalTime());
+                    bw.newLine();
+                }
             }
         } catch (IOException e) {
             System.out.println("Error al guardar archivo: " + e.getMessage());
         }
     }
+    
 }
 
